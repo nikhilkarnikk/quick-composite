@@ -1,0 +1,135 @@
+/* Reset styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff; /* Matches the flat white background */
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main screen layout */
+  .main-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    background-color: #ffffff;
+    min-height: 100vh;
+  }
+  
+  /* Top bar with logo and nav links */
+  .top-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 2rem;
+    position: relative;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 6.2%; /* Adjusts the logo alignment */
+  }
+  
+  .logo-img {
+    width: 55px;
+    height: auto;
+    margin-right: 0.5rem;
+    border-radius: 5px;
+  }
+  
+  .logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Navigation links */
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the navigation links */
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.3rem; /* Slightly larger for better visibility */
+    font-weight: bold;
+  }
+  
+  /* Content section */
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%; /* Reduced horizontal margins for more room */
+    width: 100%;
+    max-width: 1400px; /* Allows content to stretch further horizontally */
+  }
+  
+  /* Text content styling */
+  .text-content {
+    flex: 1;
+    padding-right: 1rem; /* Reduced right padding for more horizontal space */
+  }
+  
+  .text-content h1 {
+    font-size: 3.3rem; /* Increased by 15% */
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .text-content p {
+    font-size: 1.5rem; /* Increased by 15% */
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    color: #333;
+  }
+  
+  /* Action buttons styling */
+  .action-buttons {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .action-btn {
+    font-size: 1.5rem; /* Bigger font size for buttons */
+    padding: 1rem 2rem; /* Larger padding for bigger buttons */
+    border: none;
+    background-color: #000000;
+    color: #fff;
+    border-radius: 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* App preview styling */
+  .app-preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem; /* Reduced left padding for more horizontal space */
+  }
+  
+  .app-preview img {
+    max-width: 110%;
+    height: auto;
+    border-radius: 0rem;
+    box-shadow: none; /* Removes the shadow */
+  }
+  
+  /* Hide app store and google play buttons for now */
+  .main-buttons {
+    display: none;
+  }
+  
