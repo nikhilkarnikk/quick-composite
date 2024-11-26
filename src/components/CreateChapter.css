@@ -1,0 +1,53 @@
+.create-chapter {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .create-chapter h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .create-chapter form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .create-chapter form label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .create-chapter form input,
+  .create-chapter form select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .create-chapter form button {
+    background-color: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .codes {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .codes p {
+    margin: 0.5rem 0;
+  }
+  

@@ -1,7 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./MainScreen.css";
 
 const MainScreen = () => {
+  const navigate = useNavigate();
+
+  const handleCreateChapterClick = () => {
+    navigate("/create-chapter");
+  };
+
+  const handleJoinChapterClick = () => {
+    navigate("/join-chapter");
+  };
+
   return (
     <div className="main-screen">
       <div className="top-bar">
@@ -24,8 +35,18 @@ const MainScreen = () => {
             minutes your composite is ready to be printed and shipped.
           </p>
           <div className="action-buttons">
-            <button className="action-btn">Join Chapter</button>
-            <button className="action-btn">Create New Chapter</button>
+            <button
+              className="action-btn"
+              onClick={handleJoinChapterClick}
+            >
+              Join Chapter
+            </button>
+            <button
+              className="action-btn"
+              onClick={handleCreateChapterClick}
+            >
+              Create New Chapter
+            </button>
           </div>
         </div>
         <div className="app-preview">
