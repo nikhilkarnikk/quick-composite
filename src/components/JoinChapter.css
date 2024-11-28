@@ -1,0 +1,118 @@
+/* Main container for the join chapter page */
+.join-chapter {
+    background-image: url("/public/background_1.jpg"); /* Ensure this file exists in your public folder */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* Overlay for better readability */
+.overlay {
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent dark overlay */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Content container for the form */
+.content-container {
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95); /* Slightly transparent white background */
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Back button */
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+/* Logo styling */
+.logo {
+    max-width: 100px;
+    margin-bottom: 20px;
+}
+
+/* Page title styling */
+h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 25px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Form input styling */
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.chapter-input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.chapter-input:focus {
+    outline: none;
+    border-color: #555;
+}
+
+/* Join button styling */
+.join-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s ease-in-out;
+    font-family: Arial, sans-serif;
+}
+
+.join-button:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+/* Error message styling */
+.error-message {
+    margin-top: 10px;
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+}

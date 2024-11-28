@@ -1,0 +1,90 @@
+.admin-panel {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #000; /* Black text for better visibility */
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-transform: capitalize; /* Capitalizes each word */
+}
+
+h2 {
+    color: #333; /* Dark gray for subheading */
+    font-size: 2rem;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+h3 {
+    color: #666; /* Light gray for the year */
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for table */
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row color */
+}
+
+table tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.photo-thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Slight border around photos */
+}
+
+img[alt="Photo not available"] {
+    opacity: 0.5;
+}
+
+/* Add styling for the home button */
+.home-button {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .home-button:hover {
+    background-color: #3e3e3e;
+    border-radius: 0px;
+  }

@@ -12,6 +12,7 @@ const supabase = createClient(
 const CreateChapter = () => {
   const [fraternityName, setFraternityName] = useState("");
   const [chapterName, setChapterName] = useState("");
+  const [school, setSchool] = useState(""); // New school state
   const [year, setYear] = useState("2019-2020");
   const [uniqueCode, setUniqueCode] = useState("");
   const [adminCode, setAdminCode] = useState("");
@@ -35,6 +36,7 @@ const CreateChapter = () => {
       {
         fraternity_name: fraternityName,
         chapter_name: chapterName,
+        school, // Include the school field
         year,
         unique_code: code,
         admin_code: admin,
@@ -55,7 +57,7 @@ const CreateChapter = () => {
 
   return (
     <div className="create-chapter">
-      <h1>Create a New Chapter</h1>
+      <h1>Create A New Chapter</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Fraternity/Sorority Name:
@@ -78,6 +80,16 @@ const CreateChapter = () => {
           />
         </label>
         <label>
+          School:
+          <input
+            type="text"
+            placeholder="Ex. University of California, Los Angeles"
+            value={school}
+            onChange={(e) => setSchool(e.target.value)}
+            required
+          />
+        </label>
+        <label>
           Year:
           <select value={year} onChange={(e) => setYear(e.target.value)}>
             <option>2019-2020</option>
@@ -89,7 +101,14 @@ const CreateChapter = () => {
             <option>2025-2026</option>
           </select>
         </label>
-        <button type="submit">Submit</button>
+        <div className="button-container">
+          <button type="submit" className="submit-btn">
+            Submit
+          </button>
+          <button className="home-btn" onClick={goToMainPage}>
+            Return to Main Page
+          </button>
+        </div>
       </form>
 
       {/* Display Generated Codes */}
@@ -99,9 +118,6 @@ const CreateChapter = () => {
           <p>Admin Code: {adminCode}</p>
         </div>
       )}
-      <button className="return-btn" onClick={goToMainPage}>
-        Return to Main Page
-      </button>
     </div>
   );
 };
