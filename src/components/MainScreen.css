@@ -133,3 +133,38 @@ body {
     display: none;
   }
   
+  /* Responsive styling for portrait (taller than wide) screens */
+  @media screen and (max-aspect-ratio: 1/1) {
+    .content {
+      flex-direction: column; /* Stack content vertically */
+      align-items: center;
+      padding: 1rem;
+    }
+  
+    .app-preview {
+      order: -1; /* Move image to the top */
+      margin-bottom: 2rem;
+      padding-left: 0;
+    }
+  
+    .text-content {
+      text-align: center;
+      padding-right: 0;
+    }
+  
+    .action-buttons {
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 1rem;
+      align-items: center;
+    }
+  
+    .action-btn {
+      width: 90%; /* Full width for buttons */
+    }
+  
+    /* Hide navigation links (Features and Contact) */
+    .nav-links {
+      display: none;
+    }
+  }
+  

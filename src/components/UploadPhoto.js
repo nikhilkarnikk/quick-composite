@@ -129,7 +129,7 @@ const UploadPhoto = () => {
           type="text"
           value={year}
           onChange={(e) => setYear(e.target.value)}
-          placeholder="e.g., 2023-2024"
+          placeholder="Ex. 1 for Freshman"
         />
       </div>
       <div className="form-group">
