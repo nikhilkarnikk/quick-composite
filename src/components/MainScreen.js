@@ -31,8 +31,8 @@ const MainScreen = () => {
           <p>
             Introducing Quick Composite, the AI-powered app that simplifies the
             process of getting your fraternity or sorority composite. Join your
-            chapter, snap a photo, and let Quick Composite do the rest. Within
-            minutes your composite is ready to be printed and shipped.
+            chapter, upload a headshot, and let Quick Composite do the rest. 
+            We don't alter your appearance, and make it look unreal. 
           </p>
           <div className="action-buttons">
             <button
