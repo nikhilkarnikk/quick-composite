@@ -60,9 +60,12 @@ const JoinChapter = () => {
   };
 
     return (
+        
         <div className="join-chapter">
+
             {/* Overlay */}
             <div className="overlay"></div>
+            
             
             {/* Main Form Content */}
             <div className="content-container">
@@ -70,6 +73,9 @@ const JoinChapter = () => {
                 <button className="back-button" onClick={() => navigate("/")}>
                     ← Back
                 </button>
+
+                
+
                 
                 {/* Logo */}
                 <img src="/app-logo.png" alt="Quick Composite Logo" className="logo" />
@@ -99,6 +105,7 @@ const JoinChapter = () => {
                 {/* Error Message */}
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
             </div>
+            
         </div>
     );
 

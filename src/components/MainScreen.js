@@ -56,7 +56,41 @@ const MainScreen = () => {
           />
         </div>
       </div>
+      {/* How It Works Section */}
+      <div className="info-section">
+        <div className="info-text">
+          <h2>Quick Composite in 3 Simple Steps</h2>
+          <p>
+            Simply join your chapter with a join code given to your by your exec.
+            Upload your photo, making sure to use a simple, flat background and fill out the required fields.
+            Fill out your email and your composite photo will be sent to your Chapter Executive Board.
+          </p>
+          <p>
+            Those reponsible for creating the composite, go to Create New Chapter. Fill out the required fields. 
+            You will be given a join code, share this with your Fraternity/Sorority Chapter. You will also be given an admin code.
+            Save this code for your Executive board to alter the compsite.
+          </p>
+        </div>
+        <div className="info-image">
+          <img src="/how-it-works.png" alt="How it works illustration" />
+        </div>
+      </div>
+      {/* Why Us Section */}
+      <div className="info-section alt-section">
+        <div className="info-image">
+          <img src="/why-us.png" alt="Why us illustration" />
+        </div>
+        <div className="info-text">
+          <h2>Why Choose Us?</h2>
+          <p>
+            Quick Composite offers unmatched convenience, affordability, and
+            precision. We ensure that your chapter's memories are beautifully
+            preserved with top-notch composites.
+          </p>
+        </div>
+      </div>
     </div>
+    
   );
 };
 

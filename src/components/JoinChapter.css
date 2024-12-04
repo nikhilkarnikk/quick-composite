@@ -93,7 +93,7 @@ h1 {
 .join-button {
     width: 100%;
     padding: 12px;
-    font-size: 18px;
+    font-size: 25px;
     background-color: #000;
     color: #fff;
     border: none;
@@ -116,3 +116,4 @@ h1 {
     font-weight: bold;
     font-family: Arial, sans-serif;
 }
+

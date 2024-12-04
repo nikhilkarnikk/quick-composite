@@ -1,5 +1,5 @@
-/* Main container for the upload photo page */
-.upload-photo {
+.email-input-container {
+    position: relative;
     background-image: url("/public/background_1.jpg"); /* Ensure this file exists in your public folder */
     background-size: cover;
     background-position: center;
@@ -8,7 +8,6 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-    position: relative;
   }
   
   /* Overlay for better readability */
@@ -46,56 +45,29 @@
     font-family: 'Helvetica Neue', Arial, sans-serif;
   }
   
-  /* Photo dropbox styling */
-  .photo-dropbox {
-    width: 100%;
-    max-width: 300px;
-    height: 200px;
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .photo-dropbox.drag-over {
-    background-color: #f0f0f0;
-  }
-  
-  .photo-dropbox p {
-    font-size: 16px;
-    color: #666;
-  }
-  
-  /* Form group styling */
+  /* Form input styling */
   .form-group {
     margin-bottom: 20px;
     width: 100%;
   }
   
-  input[type="text"],
-  input[type="file"] {
+  input[type="email"] {
     width: 100%;
     padding: 12px;
     font-size: 16px;
-    border-radius: 5px;
     border: 1px solid #ddd;
+    border-radius: 5px;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
   }
   
-  input[type="text"]:focus,
-  input[type="file"]:focus {
+  input[type="email"]:focus {
     outline: none;
     border-color: #555;
   }
   
-  /* Upload button styling */
-  .upload-button {
+  /* Submit button styling */
+  .submit-button {
     width: 100%;
     padding: 12px;
     font-size: 25px;
@@ -108,15 +80,15 @@
     font-family: Arial, sans-serif;
   }
   
-  .upload-button:hover {
+  .submit-button:hover {
     background-color: #444;
     transform: scale(1.05);
   }
   
   /* Error message styling */
   .error-message {
-    color: red;
     margin-top: 10px;
+    color: red;
     font-size: 15px;
     font-weight: bold;
     font-family: Arial, sans-serif;

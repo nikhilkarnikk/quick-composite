@@ -166,5 +166,76 @@ body {
     .nav-links {
       display: none;
     }
+    
   }
+
+  /* Existing styles remain unchanged */
+
+/* New sections styling */
+.info-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 5%;
+    background-color: #d6dee6; /* Light grayish-blue background */
+    margin: 4rem 10%; /* Increased side margins for larger spacing */
+    border-radius: 20px; /* Rounds the edges */
+ 
+  }
+  
+  .info-section.alt-section {
+    flex-direction: row-reverse; /* Reverse layout for alternating design */
+  }
+  
+  .info-text {
+    flex: 1;
+    padding-right: 2rem;
+  }
+  
+  .info-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #111; /* Darker text for headings */
+  }
+  
+  .info-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333; /* Regular text color */
+  }
+  
+  .info-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .info-image img {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media (max-width: 768px) {
+    .info-section {
+      flex-direction: column;
+      padding: 2rem;
+    }
+  
+    .info-section.alt-section {
+      flex-direction: column;
+    }
+  
+    .info-text {
+      padding-right: 0;
+      text-align: center;
+    }
+  
+    .info-image {
+      margin-top: 2rem;
+    }
+  }
+  
   

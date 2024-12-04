@@ -6,6 +6,7 @@ import CreateChapter from "./components/CreateChapter";
 import JoinChapter from "./components/JoinChapter";
 import UploadPhoto from "./components/UploadPhoto";
 import AdminPage from "./components/AdminPanel";
+import EmailInput from "./components/EmailInput";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
         
         {/* Upload Photos for a Chapter */}
         <Route path="/upload/:chapterId" element={<UploadPhoto />} />
+        <Route path="/email-input/:chapterId" element={<EmailInput />} />
         
         {/* Admin Page for Chapter */}
         <Route path="/admin/:chapterId" element={<AdminPage />} />

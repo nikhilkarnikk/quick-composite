@@ -18,7 +18,13 @@ const UploadPhoto = () => {
   const [photo, setPhoto] = useState(null);
   const [errorMessage, setErrorMessage] = useState("");
   const [dragOver, setDragOver] = useState(false);
+  const [isUploaded, setIsUploaded] = useState(false);
+  const [fileName, setFileName] = useState("");
   const navigate = useNavigate();
+
+  const handleNext = () => {
+    navigate("/email-input/:chapterId", { state: { fileName } });
+  };
 
   const handleFileChange = (e) => {
     setPhoto(e.target.files[0]);
@@ -50,18 +56,20 @@ const UploadPhoto = () => {
     }
 
     try {
-      const formattedFileName = `${chapterId}_${fullName.replace(
+      const generatedFileName = `${chapterId}_${fullName.replace(
         / /g,
         " "
       )}_${year}_${position || "n-a"}_${recentlyInitiated ? "y" : "n"}.${
         photo.name.split(".").pop()
       }`;
 
+      setFileName(generatedFileName);
+
       const formData = new FormData();
       formData.append("file", photo);
 
       const response = await fetch(
-        `https://tufxymvifneolfvkhxeo.supabase.co/storage/v1/object/photos/${formattedFileName}`,
+        `https://tufxymvifneolfvkhxeo.supabase.co/storage/v1/object/photos/${generatedFileName}`,
         {
           method: "POST",
           body: formData,
@@ -80,81 +88,87 @@ const UploadPhoto = () => {
       }
 
       alert("Photo uploaded successfully!");
+      setIsUploaded(true);
       setFullName("");
       setYear("");
       setPosition("");
       setRecentlyInitiated(false);
       setPhoto(null);
-      navigate("/");
     } catch (error) {
       setErrorMessage("An unexpected error occurred. Please try again.");
     }
   };
 
   return (
-    <div className="upload-photo-container">
-      <h1>Upload Your Photo</h1>
-      <div
-        className={`photo-dropbox ${dragOver ? "drag-over" : ""}`}
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-        onDrop={handleDrop}
-        onClick={() => document.getElementById("file-input").click()}
-      >
-        {photo ? (
-          <p>{photo.name}</p>
-        ) : (
-          <p>Drag and drop your photo here or click to select</p>
-        )}
-        <input
-          id="file-input"
-          type="file"
-          accept="image/*"
-          onChange={handleFileChange}
-          hidden
-        />
-      </div>
-      <div className="form-group">
-        <label>Full Name*</label>
-        <input
-          type="text"
-          value={fullName}
-          onChange={(e) => setFullName(e.target.value)}
-          placeholder="Enter your full name"
-        />
-      </div>
-      <div className="form-group">
-        <label>Year*</label>
-        <input
-          type="text"
-          value={year}
-          onChange={(e) => setYear(e.target.value)}
-          placeholder="Ex. 1 for Freshman"
-        />
-      </div>
-      <div className="form-group">
-        <label>Position</label>
-        <input
-          type="text"
-          value={position}
-          onChange={(e) => setPosition(e.target.value)}
-          placeholder="Optional"
-        />
-      </div>
-      <div className="form-group">
-        <label>
+    <div className="upload-photo">
+      <div className="overlay"></div>
+      <div className="content-container">
+        <h1>Upload Your Photo</h1>
+        <div
+          className={`photo-dropbox ${dragOver ? "drag-over" : ""}`}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
+          onClick={() => document.getElementById("file-input").click()}
+        >
+          {photo ? (
+            <p>{photo.name}</p>
+          ) : (
+            <p>Drag and drop your photo here or click to select</p>
+          )}
           <input
-            type="checkbox"
-            checked={recentlyInitiated}
-            onChange={(e) => setRecentlyInitiated(e.target.checked)}
+            id="file-input"
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+            hidden
           />
-          Recently Initiated
-        </label>
+        </div>
+        <div className="form-group">
+          <label>Full Name*</label>
+          <input
+            type="text"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            placeholder="Enter your full name"
+          />
+        </div>
+        <div className="form-group">
+          <label>Year*</label>
+          <input
+            type="text"
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+            placeholder="Ex. 1 for Freshman, 2 for Sophmore"
+          />
+        </div>
+        <div className="form-group">
+          <label>Position</label>
+          <input
+            type="text"
+            value={position}
+            onChange={(e) => setPosition(e.target.value)}
+            placeholder="Optional, Ex. Vice President"
+          />
+        </div>
+        <div className="form-group">
+          <label>
+            <input
+              type="checkbox"
+              checked={recentlyInitiated}
+              onChange={(e) => setRecentlyInitiated(e.target.checked)}
+            />
+            Recently Initiated
+          </label>
+        </div>
+        <button
+          onClick={isUploaded ? handleNext : handleUpload}
+          className="upload-button"
+        >
+          {isUploaded ? "Next" : "Upload"}
+        </button>
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
       </div>
-      <button onClick={handleUpload} className="upload-button">
-        Upload
-      </button>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>
   );
 };
